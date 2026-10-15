@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Bio-Data - Mohamed Riyas</title>
+<style>
+    * { box-sizing: border-box; }
+    body {
+        font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+        background-color: #eef2f5;
+        margin: 0;
+        padding: 40px 20px;
+        color: #2b2b2b;
+    }
+    .card {
+        max-width: 820px;
+        margin: 0 auto;
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+        overflow: hidden;
+    }
+
+    /* ---------- Header ---------- */
+    .card-header {
+        background: linear-gradient(135deg, #2c3e50, #1a2733);
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        gap: 25px;
+        padding: 35px 40px;
+    }
+    .avatar {
+        flex-shrink: 0;
+        width: 100px;
+        height: 100px;
+        line-height: 100px;
+        border-radius: 50%;
+        background-color: #d35400;
+        color: #ffffff;
+        font-size: 36px;
+        font-weight: bold;
+        text-align: center;
+    }
+    .header-text h1 {
+        margin: 0;
+        font-size: 28px;
+    }
+    .header-text p.tagline {
+        margin: 6px 0 0;
+        color: #d35400;
+        font-weight: bold;
+        font-size: 15px;
+    }
+    .header-text p.contact-line {
+        margin: 10px 0 0;
+        font-size: 13px;
+        color: #cfd9e0;
+    }
+
+    .card-body {
+        padding: 10px 40px 40px;
+    }
+
+    h2.section-title {
+        color: #2c3e50;
+        border-left: 5px solid #d35400;
+        padding-left: 10px;
+        font-size: 19px;
+        margin-top: 34px;
+        margin-bottom: 14px;
+    }
+
+    /* ---------- Objective ---------- */
+    .objective {
+        background-color: #fbf3ec;
+        border-left: 4px solid #d35400;
+        padding: 14px 18px;
+        font-style: italic;
+        font-size: 15px;
+        border-radius: 4px;
+    }
+
+    /* ---------- Tables ---------- */
+    table.info-table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    table.info-table td {
+        padding: 9px 8px;
+        border-bottom: 1px solid #e0e0e0;
+        font-size: 15px;
+    }
+    table.info-table td.label {
+        font-weight: bold;
+        color: #555;
+        width: 35%;
+    }
+
+    table.edu-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 14px;
+    }
+    table.edu-table th {
+        background-color: #2c3e50;
+        color: #fff;
+        text-align: left;
+        padding: 10px 12px;
+    }
+    table.edu-table td {
+        padding: 10px 12px;
+        border-bottom: 1px solid #e5e5e5;
+    }
+    table.edu-table tr:nth-child(even) td {
+        background-color: #f7f9fb;
+    }
+
+    /* ---------- Skill bars ---------- */
+    .skill-row {
+        margin-bottom: 12px;
+    }
+    .skill-row .skill-name {
+        display: flex;
+        justify-content: space-between;
+        font-size: 14px;
+        margin-bottom: 4px;
+        font-weight: bold;
+        color: #2c3e50;
+    }
+    .skill-bar-bg {
+        background-color: #e5e9ec;
+        border-radius: 6px;
+        height: 10px;
+        overflow: hidden;
+    }
+    .skill-bar-fill {
+        height: 100%;
+        background-color: #d35400;
+        border-radius: 6px;
+    }
+
+    /* ---------- Tag list ---------- */
+    ul.tag-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    ul.tag-list li {
+        background-color: #eaf1f8;
+        color: #2c3e50;
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-size: 13px;
+        font-weight: bold;
+        border: 1px solid #c7d7e5;
+    }
+
+    /* ---------- Two-column grid ---------- */
+    .two-col {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+    @media (max-width: 600px) {
+        .two-col { grid-template-columns: 1fr; }
+        .card-header { flex-direction: column; text-align: center; }
+    }
+
+    /* ---------- Projects ---------- */
+    .project {
+        margin-bottom: 16px;
+        padding-bottom: 14px;
+        border-bottom: 1px dashed #ddd;
+    }
+    .project:last-child {
+        border-bottom: none;
+    }
+    .project h3 {
+        margin: 0 0 4px;
+        font-size: 15px;
+        color: #2c3e50;
+    }
+    .project p {
+        margin: 0;
+        font-size: 14px;
+        color: #555;
+    }
+
+    /* ---------- Plain lists ---------- */
+    ul.plain-list, ol.plain-list {
+        margin: 0;
+        padding-left: 20px;
+        font-size: 14px;
+    }
+    ul.plain-list li, ol.plain-list li {
+        margin-bottom: 6px;
+    }
+
+    /* ---------- Declaration & footer ---------- */
+    .declaration {
+        font-size: 14px;
+        color: #444;
+        margin-top: 10px;
+    }
+    .signature-block {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+        font-size: 14px;
+        color: #2c3e50;
+    }
+    .footer-note {
+        text-align: center;
+        font-size: 12px;
+        color: #999;
+        padding: 16px;
+        border-top: 1px solid #eee;
+        margin-top: 20px;
+    }
+</style>
+</head>
+<body>
+
+<div class="card">
+
+    <!-- ================= HEADER ================= -->
+    <div class="card-header">
+        <div class="avatar">MR</div>
+        <div class="header-text">
+            <h1>Mohamed Riyas</h1>
+            <p class="tagline">M.Sc. Computer Science Student</p>
+            <p class="contact-line">
+                &#9993; mohamedriyas@example.com &nbsp;|&nbsp;
+                &#9742; +91 98765 43210 &nbsp;|&nbsp;
+                &#128205; Kochi, Kerala, India
+            </p>
+        </div>
+    </div>
+
+    <div class="card-body">
+
+        <!-- ================= OBJECTIVE ================= -->
+        <h2 class="section-title">Career Objective</h2>
+        <p class="objective">
+            To secure a challenging position in a reputable organization where I can apply my
+            programming knowledge and problem-solving skills, while continuing to learn and grow
+            as a computer science professional.
+        </p>
+
+        <!-- ================= PERSONAL DETAILS ================= -->
+        <h2 class="section-title">Personal Details</h2>
+        <table class="info-table">
+            <tr>
+                <td class="label">Full Name</td>
+                <td>Mohamed Riyas</td>
+            </tr>
+            <tr>
+                <td class="label">Age</td>
+                <td>22</td>
+            </tr>
+            <tr>
+                <td class="label">Date of Birth</td>
+                <td>15 June 2003</td>
+            </tr>
+            <tr>
+                <td class="label">Gender</td>
+                <td>Male</td>
+            </tr>
+            <tr>
+                <td class="label">Nationality</td>
+                <td>Indian</td>
+            </tr>
+            <tr>
+                <td class="label">Languages Known</td>
+                <td>English, Malayalam, Hindi</td>
+            </tr>
+        </table>
+
+        <!-- ================= EDUCATION ================= -->
+        <h2 class="section-title">Educational Qualifications</h2>
+        <table class="edu-table">
+            <tr>
+                <th>Course</th>
+                <th>Institution</th>
+                <th>Year</th>
+                <th>Grade</th>
+            </tr>
+            <tr>
+                <td>M.Sc. Computer Science</td>
+                <td>XYZ University</td>
+                <td>2024 - 2026</td>
+                <td>Pursuing</td>
+            </tr>
+            <tr>
+                <td>B.Sc. Computer Science</td>
+                <td>ABC College</td>
+                <td>2021 - 2024</td>
+                <td>First Class</td>
+            </tr>
+            <tr>
+                <td>Higher Secondary (12th)</td>
+                <td>State Board</td>
+                <td>2021</td>
+                <td>85%</td>
+            </tr>
+        </table>
+
+        <!-- ================= TECHNICAL SKILLS ================= -->
+        <h2 class="section-title">Technical Skills</h2>
+        <div class="skill-row">
+            <div class="skill-name"><span>Python</span><span>90%</span></div>
+            <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:90%;"></div></div>
+        </div>
+        <div class="skill-row">
+            <div class="skill-name"><span>Java</span><span>80%</span></div>
+            <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:80%;"></div></div>
+        </div>
+        <div class="skill-row">
+            <div class="skill-name"><span>C++</span><span>75%</span></div>
+            <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:75%;"></div></div>
+        </div>
+
+        <!-- ================= TOOLS & TECHNOLOGIES (two column) ================= -->
+        <h2 class="section-title">Tools & Technologies</h2>
+        <ul class="tag-list">
+            <li>Git &amp; GitHub</li>
+            <li>MySQL</li>
+            <li>Linux</li>
+            <li>VS Code</li>
+            <li>HTML / CSS</li>
+            <li>Django</li>
+        </ul>
+
+        <!-- ================= PROJECTS & ACHIEVEMENTS (two column) ================= -->
+        <div class="two-col">
+            <div>
+                <h2 class="section-title">Projects</h2>
+                <div class="project">
+                    <h3>Library Management System</h3>
+                    <p>A Python-based desktop application to manage book records, issue/return, and fines.</p>
+                </div>
+                <div class="project">
+                    <h3>Online Quiz Portal</h3>
+                    <p>A Java web application allowing students to take timed quizzes and view scores instantly.</p>
+                </div>
+                <div class="project">
+                    <h3>Student Result Analyzer</h3>
+                    <p>A C++ console program that processes and analyzes student marks with grade statistics.</p>
+                </div>
+            </div>
+            <div>
+                <h2 class="section-title">Achievements</h2>
+                <ul class="plain-list">
+                    <li>Winner - Inter-College Coding Contest, 2023</li>
+                    <li>Best Project Award - Final Year Project, 2024</li>
+                    <li>Certified Python Developer - Online Certification</li>
+                    <li>Active member, College Computer Society</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- ================= HOBBIES ================= -->
+        <h2 class="section-title">Hobbies &amp; Interests</h2>
+        <ul class="tag-list">
+            <li>Coding</li>
+            <li>Reading Tech Blogs</li>
+            <li>Chess</li>
+            <li>Cricket</li>
+            <li>Traveling</li>
+        </ul>
+
+        <!-- ================= DECLARATION ================= -->
+        <h2 class="section-title">Declaration</h2>
+        <p class="declaration">
+            I hereby declare that the above information is true and correct to the best of my
+            knowledge and belief.
+        </p>
+        <div class="signature-block">
+            <span>Date: 02-09-2026</span>
+            <span>Mohamed Riyas</span>
+        </div>
+
+    </div>
+
+    <div class="footer-note">
+        This Bio-Data was generated for academic purposes.
+    </div>
+
+</div>
+
+</body>
+</html>

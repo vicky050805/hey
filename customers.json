@@ -1,0 +1,20 @@
+[
+    {
+        "id": "customer_6aab80a2e57a0",
+        "name": "ysgsai",
+        "city": "asasdsa",
+        "pincode": "123456",
+        "phone": "1234567891",
+        "email": "abc@gmail.com",
+        "created_at": "2026-09-17 05:54:42"
+    },
+    {
+        "id": "customer_6aab813b07dee",
+        "name": "fgessa",
+        "city": "hsakjsak",
+        "pincode": "123456",
+        "phone": "1234567891",
+        "email": "abc@gmail.com",
+        "created_at": "2026-09-17 05:57:15"
+    }
+]

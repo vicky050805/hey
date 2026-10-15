@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Lists and Tables Demo</title>
+<style>
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        max-width: 750px;
+        margin: 50px auto;
+        color: #2b2b2b;
+        padding: 0 20px;
+        line-height: 1.6;
+    }
+    h1 {
+        text-align: center;
+        color: #1a3c5e;
+    }
+    h2 {
+        color: #1a3c5e;
+        border-bottom: 2px solid #d35400;
+        padding-bottom: 5px;
+        margin-top: 45px;
+    }
+    ul, ol {
+        margin-left: 20px;
+    }
+    li {
+        margin-bottom: 6px;
+    }
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-top: 15px;
+    }
+    th, td {
+        border: 1px solid #999;
+        padding: 10px 14px;
+        text-align: left;
+    }
+    th {
+        background-color: #1a3c5e;
+        color: #fff;
+    }
+    tr:nth-child(even) {
+        background-color: #f4f7fa;
+    }
+</style>
+</head>
+<body>
+
+<h1>Lists and Tables in HTML</h1>
+
+<!-- ================= LISTS SECTION ================= -->
+<h2>1. Unordered List (Bullets)</h2>
+<p>Programming languages I know:</p>
+<ul>
+    <li>Python</li>
+    <li>Java</li>
+    <li>C++</li>
+    <li>JavaScript</li>
+</ul>
+
+<h2>2. Ordered List (Numbers)</h2>
+<p>Steps to make a cup of tea:</p>
+<ol>
+    <li>Boil water</li>
+    <li>Add tea leaves or a tea bag</li>
+    <li>Let it steep for 3-5 minutes</li>
+    <li>Add milk and sugar as desired</li>
+    <li>Serve hot</li>
+</ol>
+
+<h2>3. Nested List</h2>
+<p>Subjects and topics:</p>
+<ul>
+    <li>Computer Science
+        <ol>
+            <li>Data Structures</li>
+            <li>Operating Systems</li>
+            <li>Web Technologies</li>
+        </ol>
+    </li>
+    <li>Mathematics
+        <ol>
+            <li>Algebra</li>
+            <li>Calculus</li>
+        </ol>
+    </li>
+</ul>
+
+<!-- ================= TABLE SECTION ================= -->
+<h2>4. Table Format Data</h2>
+<p>Student marks in three subjects:</p>
+<table>
+    <thead>
+        <tr>
+            <th>Roll No.</th>
+            <th>Name</th>
+            <th>Maths</th>
+            <th>Science</th>
+            <th>English</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>Anjali Nair</td>
+            <td>88</td>
+            <td>92</td>
+            <td>79</td>
+            <td>259</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Rahul Menon</td>
+            <td>76</td>
+            <td>81</td>
+            <td>85</td>
+            <td>242</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Sneha Pillai</td>
+            <td>95</td>
+            <td>89</td>
+            <td>91</td>
+            <td>275</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Arjun Kumar</td>
+            <td>68</td>
+            <td>74</td>
+            <td>72</td>
+            <td>214</td>
+        </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

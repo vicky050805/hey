@@ -1,0 +1,36 @@
+ i=imread('image4.jpg');
+imshow(i),title('Original image');
+i=rgb2gray(i);
+figure,imshow(i),title('Gray image');
+
+g=edge(i,'sobel');
+figure,imshow(g);
+title('Sobel edge detector');
+
+se90 = strel('line', 3, 90);
+se0 = strel('line', 3, 0);
+d=imdilate(i,[se90 se0]);
+figure,imshow(d);
+title('Dilated image');
+BWdfill = imfill(d, 'holes');
+figure, imshow(BWdfill);
+title('binary image with filled holes');
+BWnobord = imclearborder(BWdfill, 4);
+figure, imshow(BWnobord), title('cleared border image');
+seD = strel('diamond',1);
+BWfinal = imerode(BWnobord,seD);
+BWfinal = imerode(BWfinal,seD);
+figure, imshow(BWfinal), title('Extraction of Erosion');
+noise_g=imnoise(i,'Salt& Pepper');
+disk=strel('disk',2);
+no_salt=imopen(noise_g,disk);
+no_pepper=imclose(noise_g,disk);
+no_saltandpepper=imclose(no_salt,disk);
+subplot(2,2,1);
+imshow(noise_g),title('Salt and Pepper noise');
+subplot(2,2,2);
+imshow(no_salt),title('Remove salt noise');
+subplot(2,2,3);
+imshow(no_pepper),title('Remove Pepper noise');
+subplot(2,2,4);
+imshow(no_saltandpepper),title('Remove Salt and Pepper noise');

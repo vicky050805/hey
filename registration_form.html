@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Inter-Collegiate Fest Registration</title>
+<style>
+    * { box-sizing: border-box; }
+
+    body {
+        margin: 0;
+        font-family: 'Segoe UI', Arial, Helvetica, sans-serif;
+        background: linear-gradient(135deg, #1a2733, #2c3e50 60%, #d35400);
+        min-height: 100vh;
+        padding: 40px 15px;
+    }
+
+    .form-wrapper {
+        max-width: 700px;
+        margin: 0 auto;
+        background-color: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+        overflow: hidden;
+    }
+
+    .form-header {
+        background: linear-gradient(120deg, #d35400, #e67e22);
+        color: #ffffff;
+        text-align: center;
+        padding: 30px 20px 25px;
+    }
+    .form-header h1 {
+        margin: 0;
+        font-size: 26px;
+        letter-spacing: 0.5px;
+    }
+    .form-header p {
+        margin: 8px 0 0;
+        font-size: 14px;
+        color: #fdebd8;
+    }
+
+    form {
+        padding: 30px 40px 40px;
+    }
+
+    fieldset {
+        border: none;
+        border-top: 2px solid #eee;
+        margin: 0 0 25px;
+        padding: 20px 0 0;
+    }
+    legend {
+        font-size: 16px;
+        font-weight: bold;
+        color: #d35400;
+        padding: 0 8px 0 0;
+    }
+
+    .form-group {
+        margin-bottom: 18px;
+    }
+    .form-row {
+        display: flex;
+        gap: 20px;
+    }
+    .form-row .form-group {
+        flex: 1;
+    }
+
+    label {
+        display: block;
+        font-size: 14px;
+        font-weight: bold;
+        color: #2c3e50;
+        margin-bottom: 6px;
+    }
+    label .required {
+        color: #d35400;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="number"],
+    input[type="date"],
+    select,
+    textarea {
+        width: 100%;
+        padding: 10px 12px;
+        border: 1.5px solid #ccd6dd;
+        border-radius: 6px;
+        font-size: 14px;
+        font-family: inherit;
+        color: #2b2b2b;
+        transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    input:focus,
+    select:focus,
+    textarea:focus {
+        outline: none;
+        border-color: #d35400;
+        box-shadow: 0 0 0 3px rgba(211, 84, 0, 0.15);
+    }
+
+    textarea {
+        resize: vertical;
+        min-height: 70px;
+    }
+
+    .radio-group, .checkbox-group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 18px;
+        margin-top: 6px;
+    }
+    .radio-group label, .checkbox-group label {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-weight: normal;
+        font-size: 14px;
+        color: #333;
+        margin-bottom: 0;
+    }
+    .radio-group input, .checkbox-group input {
+        accent-color: #d35400;
+        width: 16px;
+        height: 16px;
+    }
+
+    small.hint {
+        display: block;
+        color: #888;
+        font-size: 12px;
+        margin-top: 4px;
+    }
+
+    .submit-row {
+        text-align: center;
+        margin-top: 30px;
+    }
+    button[type="submit"] {
+        background: linear-gradient(120deg, #d35400, #e67e22);
+        color: #ffffff;
+        border: none;
+        padding: 13px 45px;
+        font-size: 16px;
+        font-weight: bold;
+        border-radius: 30px;
+        cursor: pointer;
+        letter-spacing: 0.5px;
+        box-shadow: 0 4px 12px rgba(211, 84, 0, 0.4);
+        transition: transform 0.15s, box-shadow 0.15s;
+    }
+    button[type="submit"]:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(211, 84, 0, 0.5);
+    }
+    button[type="reset"] {
+        background: none;
+        border: none;
+        color: #888;
+        font-size: 14px;
+        margin-left: 20px;
+        cursor: pointer;
+        text-decoration: underline;
+    }
+
+    @media (max-width: 550px) {
+        .form-row {
+            flex-direction: column;
+            gap: 0;
+        }
+        form {
+            padding: 25px 22px 35px;
+        }
+    }
+</style>
+</head>
+<body>
+
+<div class="form-wrapper">
+
+    <div class="form-header">
+        <h1>&#127942; Inter-Collegiate Fest 2026</h1>
+        <p>Registration Form &mdash; "SPECTRA '26"</p>
+    </div>
+
+    <form action="#" method="post">
+
+        <!-- ================= PERSONAL DETAILS ================= -->
+        <fieldset>
+            <legend>Personal Details</legend>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="fname">Full Name <span class="required">*</span></label>
+                    <input type="text" id="fname" name="fullname" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group">
+                    <label for="age">Age <span class="required">*</span></label>
+                    <input type="number" id="age" name="age" min="16" max="30" placeholder="e.g. 20" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Gender <span class="required">*</span></label>
+                <div class="radio-group">
+                    <label><input type="radio" name="gender" value="Male" required> Male</label>
+                    <label><input type="radio" name="gender" value="Female"> Female</label>
+                    <label><input type="radio" name="gender" value="Other"> Other</label>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="email">Email Address <span class="required">*</span></label>
+                    <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number <span class="required">*</span></label>
+                    <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="10-digit mobile number" required>
+                </div>
+            </div>
+        </fieldset>
+
+        <!-- ================= COLLEGE DETAILS ================= -->
+        <fieldset>
+            <legend>College Details</legend>
+
+            <div class="form-group">
+                <label for="college">College Name <span class="required">*</span></label>
+                <input type="text" id="college" name="college" placeholder="Enter your college name" required>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="dept">Department</label>
+                    <input type="text" id="dept" name="department" placeholder="e.g. Computer Science">
+                </div>
+                <div class="form-group">
+                    <label for="year">Year of Study <span class="required">*</span></label>
+                    <select id="year" name="year" required>
+                        <option value="">-- Select --</option>
+                        <option value="1">1st Year</option>
+                        <option value="2">2nd Year</option>
+                        <option value="3">3rd Year</option>
+                        <option value="4">4th Year</option>
+                        <option value="PG">Postgraduate</option>
+                    </select>
+                </div>
+            </div>
+        </fieldset>
+
+        <!-- ================= EVENT DETAILS ================= -->
+        <fieldset>
+            <legend>Event Details</legend>
+
+            <div class="form-group">
+                <label for="event">Select Event <span class="required">*</span></label>
+                <select id="event" name="event" required>
+                    <option value="">-- Choose an Event --</option>
+                    <option value="dance">Dance Competition</option>
+                    <option value="music">Music Competition</option>
+                    <option value="coding">Coding Challenge</option>
+                    <option value="debate">Debate</option>
+                    <option value="quiz">Quiz Contest</option>
+                    <option value="photography">Photography</option>
+                    <option value="dramatics">Dramatics</option>
+                </select>
+                <small class="hint">Choose one primary event you wish to participate in.</small>
+            </div>
+
+            <div class="form-group">
+                <label>Participation Type <span class="required">*</span></label>
+                <div class="radio-group">
+                    <label><input type="radio" name="ptype" value="Solo" required> Solo</label>
+                    <label><input type="radio" name="ptype" value="Team"> Team</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Accommodation Required</label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="accommodation" value="Yes"> Yes, I need accommodation</label>
+                    <label><input type="checkbox" name="food" value="Yes"> Yes, I need food pass</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="remarks">Additional Remarks</label>
+                <textarea id="remarks" name="remarks" placeholder="Any special requirements or notes..."></textarea>
+            </div>
+        </fieldset>
+
+        <div class="form-group">
+            <label><input type="checkbox" required style="width:auto; accent-color:#d35400;"> I agree to the rules and regulations of the event. <span class="required">*</span></label>
+        </div>
+
+        <div class="submit-row">
+            <button type="submit">Submit Registration</button>
+            <button type="reset">Clear Form</button>
+        </div>
+
+    </form>
+</div>
+
+</body>
+</html>

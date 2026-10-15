@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Exploring the World</title>
+<style>
+    body {
+        font-family: Georgia, 'Times New Roman', serif;
+        max-width: 700px;
+        margin: 60px auto;
+        line-height: 1.8;
+        font-size: 18px;
+        color: #2b2b2b;
+        padding: 0 20px;
+    }
+    h1 {
+        text-align: center;
+        color: #1a3c5e;
+    }
+    a.country {
+        color: #d35400;
+        text-decoration: none;
+        font-weight: bold;
+        border-bottom: 2px dotted #d35400;
+        cursor: pointer;
+    }
+    a.country:hover {
+        color: #1a071d;
+        border-bottom: 2px solid #a04000;
+    }
+    #info-box {
+        margin-top: 40px;
+        padding: 20px 25px;
+        border-left: 5px solid #2c73b2;
+        background: #f4f7fa;
+        border-radius: 4px;
+        display: none;
+    }
+    #info-box.visible {
+        display: block;
+    }
+    #info-box h2 {
+        margin-top: 0;
+        color: #1a3c5e;
+    }
+    #close-btn {
+        float: right;
+        cursor: pointer;
+        color: #888;
+        font-weight: bold;
+        font-size: 14px;
+    }
+    #close-btn:hover {
+        color: #333;
+    }
+</style>
+</head>
+<body>
+    <h1>A Glimpse Around the World</h1>
+    <p>
+        The world is home to many fascinating nations, each with its own story.
+        <a class="country" onclick="showInfo('india')">India</a>, a land of vibrant culture and
+        history, sits in South Asia. Across Europe, <a class="country" onclick="showInfo('france')">France</a>
+        is celebrated for its art, cuisine, and architecture. In East Asia,
+        <a class="country" onclick="showInfo('japan')">Japan</a> blends ancient tradition with
+        cutting-edge technology. Down in South America, <a class="country" onclick="showInfo('brazil')">Brazil</a>
+        is known for its rainforests and lively festivals. And in the southern hemisphere,
+        <a class="country" onclick="showInfo('australia')">Australia</a> is famous for its unique
+        wildlife and vast outback landscapes. Click on any country name to learn a little more about it.
+    </p>
+
+    <div id="info-box">
+        <span id="close-btn" onclick="closeInfo()">&#10005; close</span>
+        <h2 id="info-title"></h2>
+        <p id="info-text"></p>
+    </div>
+
+<script>
+    const countryData = {
+        india: {
+            title: "India",
+            text: "India is a vast country in South Asia, known as the world's most populous nation and the largest democracy on Earth. It has a history stretching back thousands of years, with achievements in mathematics, philosophy, and the arts. India is home to a rich mix of languages, religions, and traditions, from the snow-capped Himalayas in the north to tropical coastlines in the south. Its capital is New Delhi, and major cities like Mumbai, Bengaluru, and Chennai are hubs of commerce, technology, and cinema."
+        },
+        france: {
+            title: "France",
+            text: "France is a country in Western Europe renowned for its contributions to art, literature, fashion, and cuisine. Its capital, Paris, is home to landmarks such as the Eiffel Tower and the Louvre Museum. France's diverse landscape ranges from the beaches of the French Riviera to the peaks of the Alps and the vineyards of Bordeaux. It is also one of the founding members of the European Union and a major global cultural influence."
+        },
+        japan: {
+            title: "Japan",
+            text: "Japan is an island nation in East Asia known for blending centuries-old traditions with cutting-edge technology. Its capital, Tokyo, is one of the world's largest and most dynamic cities. Japan's culture includes tea ceremonies, sumo wrestling, and beautiful cherry blossom festivals, alongside innovations in robotics, electronics, and automobiles. The country is made up of thousands of islands, with Honshu, Hokkaido, Kyushu, and Shikoku being the four largest."
+        },
+        brazil: {
+            title: "Brazil",
+            text: "Brazil is the largest country in South America, famous for the Amazon Rainforest, which plays a vital role in the planet's climate. Its culture is vibrant, celebrated worldwide through samba music, football, and the colorful festivities of Carnival. Brazil's capital is Brasília, while cities like Rio de Janeiro and São Paulo are known for their beaches, skyline, and bustling energy. Portuguese is the official language, a distinctive trait among its Spanish-speaking neighbors."
+        },
+        australia: {
+            title: "Australia",
+            text: "Australia is a country and continent in the southern hemisphere, known for its unique wildlife such as kangaroos, koalas, and the platypus. It features diverse landscapes, from the vast red deserts of the Outback to the Great Barrier Reef, the world's largest coral reef system. Its capital is Canberra, while Sydney and Melbourne are its most populous and culturally significant cities. Australia is also recognized for its laid-back lifestyle and strong ties to both Aboriginal heritage and modern multiculturalism."
+        }
+    };
+
+    function showInfo(key) {
+        const data = countryData[key];
+        document.getElementById('info-title').textContent = data.title;
+        document.getElementById('info-text').textContent = data.text;
+        const box = document.getElementById('info-box');
+        box.classList.add('visible');
+        box.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    function closeInfo() {
+        document.getElementById('info-box').classList.remove('visible');
+    }
+</script>
+</body>
+</html>
